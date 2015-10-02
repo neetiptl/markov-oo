@@ -45,7 +45,7 @@ class SimpleMarkovGenerator(object):
         key = choice(self.chains.keys())
         words = [key[0], key[1]]
         num_chars = 0
-        while key in self.chains and len(words) < self.max_output_size:
+        while key in self.chains and num_chars < self.max_output_size:
         # Keep looping until we have a key that isn't in the chains
         # (which would mean it was tmax_output_sizehe end of our original text)
         #
