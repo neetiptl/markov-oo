@@ -14,10 +14,8 @@ class SimpleMarkovGenerator(object):
         result = " "
         for one_file in filenames:
             one_file = open(one_file)
-            for line in one_file:
-                line_in_file = line.strip()
-                result += line_in_file
-                self.make_chains(result)
+            result += one_file.read()
+        self.make_chains(result)
 
             
 
@@ -57,7 +55,7 @@ class SimpleMarkovGenerator(object):
             key = (key[1], word)
 
         print " ".join(words)
-        print self.max_output_size
+        
 
 
 class TweetableMarkovGenerator(SimpleMarkovGenerator):
